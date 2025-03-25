@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FiShield, FiUsers, FiTrendingUp, FiRefreshCw, FiGrid,FiHeadphones  } from "react-icons/fi";
+import { FiShield, FiUsers, FiTrendingUp, FiRefreshCw, FiGrid, FiHeadphones } from "react-icons/fi";
 import ScrollReveal from "../animations/ScrollReveal";
 import SectionHeading from "../ui/SectionHeading";
 
@@ -60,18 +60,36 @@ const WhyChooseUs = () => {
         </ScrollReveal>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mt-12">
-  {features.map((feature, index) => (
-    <ScrollReveal key={index} delay={index * 0.5}>
-      <div className="neumorph-dark p-3 md:p-6 h-full flex flex-col">
-        <div className="text-white mb-4">
-          {feature.icon}
+          {features.map((feature, index) => (
+            <ScrollReveal key={index} delay={index * 0.5}>
+              <div className="relative backdrop-blur-md p-3 md:p-6 h-full flex flex-col rounded-xl transition-all duration-300 hover:scale-105 group" 
+                style={{ 
+                  background: "rgba(255, 255, 255, 0.1)",
+                  boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.15)",
+                  backdropFilter: "blur(8px)",
+                  borderTop: "1px solid rgba(255, 255, 255, 0.2)",
+                  borderLeft: "1px solid rgba(255, 255, 255, 0.2)",
+                  borderRight: "1px solid rgba(0, 0, 0, 0.05)",
+                  borderBottom: "1px solid rgba(0, 0, 0, 0.05)"
+                }}
+              >
+                {/* Light effect overlay */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-30 rounded-xl transition-opacity duration-500"
+                  style={{
+                    background: "radial-gradient(circle at 50% 0%, rgba(255,255,255,0.5), transparent 70%)",
+                  }}
+                ></div>
+                
+                <div className="relative z-10 text-white mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:text-primary-lightest">
+                  {feature.icon}
+                </div>
+                <h3 className="relative z-10 text-base md:text-xl font-bold mb-1 md:mb-3 text-white group-hover:text-primary-lightest">{feature.title}</h3>
+                <p className="relative z-10 text-xs md:text-sm text-white/90 line-clamp-4 md:line-clamp-none">{feature.description}</p>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
-        <h3 className="text-base md:text-xl font-bold mb-1 md:mb-3 text-white">{feature.title}</h3>
-        <p className="text-xs md:text-sm text-white/90 line-clamp-4 md:line-clamp-none">{feature.description}</p>
-      </div>
-    </ScrollReveal>
-  ))}
-</div>
       </div>
     </section>
   );
