@@ -31,8 +31,8 @@ const Navbar = () => {
     <header
     className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled
-        ? "bg-white shadow-md py-2"
-        : "bg-black/20 backdrop-blur-sm py-2"
+        ? "bg-black/10 backdrop-blur-sm py-2"
+        : "bg-white shadow-md py-2"
     }`}
   >
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -54,7 +54,7 @@ const Navbar = () => {
                       ? "text-primary"
                       : isScrolled
                       ? "text-gray-800"
-                      : "text-white"
+                      : "text-black"
                   }`}
                 >
                   {link.label}

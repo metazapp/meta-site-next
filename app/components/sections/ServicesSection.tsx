@@ -36,7 +36,7 @@ const ServicesSection = () => {
               className="p-4 sm:p-6 rounded-lg bg-gray-100 shadow-[inset_4px_4px_8px_#d1d9e6,inset_-4px_-4px_8px_#ffffff] transition-all duration-300 hover:shadow-[4px_4px_12px_#d1d9e6,-4px_-4px_12px_#ffffff] hover:-translate-y-1"
               style={{ minHeight: "250px" }}
             >
-              <div className="flex items-center justify-center mb-3">
+              <div className="flex items-center justify-start mb-3">
                 {React.cloneElement(iconMap[service.icon], { size: 32, className: "text-primary" })}
               </div>
               <h3 className="text-md font-bold text-gray-700 mb-2">{service.title}</h3>

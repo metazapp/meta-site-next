@@ -20,7 +20,7 @@ const SectionHeading = ({
       className={`mb-12 ${centered ? "text-center" : ""} ${className}`}
     >
       <h2
-        className={`text-3xl md:text-4xl font-bold mb-4 gradient-text inline-block ${
+        className={`text-3xl md:text-4xl font-bold mb-4 inline-block ${
           light ? "text-white" : ""
         }`}
       >

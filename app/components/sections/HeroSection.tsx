@@ -59,7 +59,7 @@ const HeroSection = () => {
   const activeKeyword = keywords[activeIndex];
 
   return (
-    <section className="min-h-screen pt-16 pb-12 md:pt-20 md:pb-16 flex items-center relative overflow-hidden">
+    <section className="min-h-[700px] pt-6 pb-8 md:pt-6 md:pb-6 flex items-center relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Text Content Side */}
