@@ -172,7 +172,7 @@ const HeroSection = () => {
                       // Position 1: First card directly behind (left side)
                       {
                         zIndex: 40,
-                        scale: 0.95,
+                        scale: 0.85,
                         x: '-18%',
                         y: 0,
                         opacity: 0.9,
@@ -182,7 +182,7 @@ const HeroSection = () => {
                       // Position 2: Second card behind (right side)
                       {
                         zIndex: 40,
-                        scale: 0.95,
+                        scale: 0.85,
                         x: '18%',
                         y: 0,
                         opacity: 0.9,
@@ -192,7 +192,7 @@ const HeroSection = () => {
                       // Position 3: Third card (far left) 
                       {
                         zIndex: 30,
-                        scale: 0.85,
+                        scale: 0.75,
                         x: '-32%',
                         y: 0,
                         opacity: 0.8,
@@ -202,7 +202,7 @@ const HeroSection = () => {
                       // Position 4: Fourth card (far right)
                       {
                         zIndex: 30,
-                        scale: 0.85,
+                        scale: 0.75,
                         x: '32%',
                         y: 0,
                         opacity: 0.8,
@@ -239,8 +239,8 @@ const HeroSection = () => {
                         }}
                         transition={{
                           type: 'spring',
-                          stiffness: 180,
-                          damping: 25,
+                          stiffness: 350,
+                          damping: 50,
                           mass: 1
                         }}
                       >
