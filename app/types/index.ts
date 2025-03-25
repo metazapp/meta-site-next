@@ -22,23 +22,7 @@ export type Service = {
   image: string;
 };
 
-// Blog Types
-export type BlogCategory = "Technology" | "Innovation" | "Development" | "Design";
 
-export type BlogPost = {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  date: string;
-  author: {
-    name: string;
-    avatar: string;
-  };
-  categories: BlogCategory[];
-  image: string;
-  featured?: boolean;
-};
 
 // Career Types
 export type JobOpening = {
@@ -57,4 +41,22 @@ export type FAQ = {
   question: string;
   answer: string;
   category?: string;
+};
+
+// Blog Types
+export type BlogCategory = "Technology" | "Innovation" | "Development" | "Design" | "Uncategorized";
+
+export type BlogPost = {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  date: string;
+  author: {
+    name: string;
+    avatar: string;
+  };
+  categories: BlogCategory[];
+  image: string;
+  featured?: boolean;
 };

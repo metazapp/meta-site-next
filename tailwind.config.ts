@@ -69,10 +69,44 @@ const config: Config = {
         'fade-in': 'fadeIn 0.5s ease-in forwards',
         'slide-up': 'slideUp 0.5s ease-out forwards',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '65ch',
+            color: 'inherit',
+            h1: {
+              color: 'inherit',
+            },
+            h2: {
+              color: 'inherit',
+            },
+            h3: {
+              color: 'inherit',
+            },
+            strong: {
+              color: 'inherit',
+            },
+            a: {
+              color: '#0A66C2',
+              '&:hover': {
+                color: '#0D47A1',
+              },
+            },
+            code: {
+              color: '#1E88E5',
+            },
+            pre: {
+              backgroundColor: '#1a1a1a',
+              color: '#ffffff',
+            },
+          },
+        },
+      },
     },
+  
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'),require('@tailwindcss/typography'),],
 };
 
 export default config;
