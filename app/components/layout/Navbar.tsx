@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,11 +39,14 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="relative z-10">
         <div className="flex items-center">
-        <img 
-  src="/Metazapp-Logo.png" 
-  alt="Metazapp Logo" 
-  className="h-auto w-auto"
-/>
+        <Image 
+      src="/Metazapp-Logo.png" 
+      alt="Metazapp Logo" 
+      width={150}
+      height={40}
+      priority
+      className="object-contain"
+    />
           </div>
         </Link>
 
