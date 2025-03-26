@@ -37,8 +37,12 @@ const Navbar = () => {
   >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="relative z-10">
-          <div className="flex items-center">
-            <span className="text-2xl font-bold gradient-text">Metazapp</span>
+        <div className="flex items-center">
+        <img 
+  src="/Metazapp-Logo.png" 
+  alt="Metazapp Logo" 
+  className="h-auto w-auto"
+/>
           </div>
         </Link>
 

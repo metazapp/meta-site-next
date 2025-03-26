@@ -43,49 +43,53 @@ const ProductsShowcase = () => {
 
       
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6 mt-8">
-          <AnimatePresence>
-            {filteredProducts.map((product) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white rounded-lg overflow-hidden shadow-lg hover-lift"
-              >
-                <div className="relative h-28 md:h-32 lg:h-40 overflow-hidden">
-                  <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                    <span className="text-gray-500 text-xs md:text-sm">Product Image</span>
-                  </div>
-                </div>
-                <div className="p-2 md:p-4">
-                  <span className="inline-block px-2 py-0.5 text-xs font-semibold text-primary bg-primary/10 rounded-full mb-2">
-                    {product.category}
-                  </span>
-                  <h3 className="text-sm md:text-base lg:text-lg font-bold mb-1">{product.title}</h3>
-                  <p className="text-xs text-gray-600 mb-2 line-clamp-2">{product.description}</p>
-                  <div className="flex gap-1">
-                    <Button 
-                      onClick={() => handleOpenModal(product)} 
-                      variant="outline" 
-                      className="flex-1 text-xs md:text-sm py-1"
-                    >
-                      Quick View
-                    </Button>
-                    <Link href={`/products/${product.id}`} className="flex-1">
-                      <Button 
-                        variant="primary" 
-                        className="w-full text-xs md:text-sm py-1"
-                      >
-                        Details
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+  <AnimatePresence>
+    {filteredProducts.map((product) => (
+      <motion.div
+        key={product.id}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.3 }}
+        className="bg-white rounded-lg overflow-hidden shadow-lg hover-lift"
+      >
+        <div className="relative h-28 md:h-32 lg:h-40 overflow-hidden">
+          <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+            <span className="text-gray-500 text-xs md:text-sm">Product Image</span>
+          </div>
         </div>
+        <div className="p-2 md:p-4">
+          <span className="inline-block px-2 py-0.5 text-xs font-semibold text-primary bg-primary/10 rounded-full mb-2">
+            {product.category}
+          </span>
+          <h3 className="text-sm md:text-base lg:text-lg font-bold mb-1">{product.title}</h3>
+          <p className="text-xs text-gray-600 mb-2 line-clamp-2">{product.description}</p>
+          <div className="flex gap-1">
+            <div className="flex-1">
+              <Button 
+                onClick={() => handleOpenModal(product)} 
+                variant="primary" 
+                className="w-full text-[10px] md:text-xs lg:text-sm py-1 px-1 md:px-2"
+              >
+                View
+              </Button>
+            </div>
+            <div className="flex-1">
+              <Link href={`/products/${product.id}`} className="block w-full">
+                <Button 
+                  variant="primary" 
+                  className="w-full text-[10px] md:text-xs lg:text-sm py-1 px-1 md:px-2"
+                >
+                  Details
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    ))}
+  </AnimatePresence>
+</div>
 
         <div className="flex justify-center mt-12">
           <Button href="/products" variant="primary">

@@ -66,10 +66,7 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
             </div>
 
             <div className="overflow-y-auto max-h-[calc(90vh-130px)]">
-              {/* Product Image */}
-              <div className="h-64 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-500">Product Image</span>
-              </div>
+            
 
               {/* Product Content */}
               <div className="p-6">

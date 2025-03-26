@@ -65,17 +65,20 @@ const ProductsDisplay = () => {
               <h3 className="text-xl font-bold mb-2">{product.title}</h3>
               <p className="text-gray-600 mb-4">{product.description}</p>
               <div className="flex flex-col sm:flex-row gap-2">
+              <Button 
+                onClick={() => handleOpenModal(product)} 
+                variant="primary" 
+                className="w-full text-[10px] md:text-xs lg:text-sm py-1 px-1 md:px-2"
+              >
+                View
+              </Button>
+                <Link href={`/products/${product.id}`} className="block w-full">
                 <Button 
-                  onClick={() => handleOpenModal(product)}
-                  variant="outline" 
-                  className="flex-1"
+                  variant="primary" 
+                  className="w-full text-[10px] md:text-xs lg:text-sm py-1 px-1 md:px-2"
                 >
-                  Quick View
+                  Details
                 </Button>
-                <Link href={`/products/${product.id}`} className="flex-1">
-                  <Button variant="primary" className="w-full">
-                    Details
-                  </Button>
                 </Link>
               </div>
             </div>

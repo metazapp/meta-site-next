@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "../ui/Button";
 import { FiArrowRight } from "react-icons/fi";
+import Image from "next/image";
 
 // Define the images that correspond to each keyword
 const heroImages = [
@@ -248,12 +249,13 @@ const HeroSection = () => {
                           <span className="text-gray-500 text-xs md:text-sm font-medium">{image.alt}</span>
                         </div>
                         {/* Replace with actual images */}
-                        {/* <Image 
+                        <Image 
                           src={image.src} 
                           alt={image.alt}
                           fill
                           className="object-cover"
-                        /> */}
+                          priority={isActive} // Add priority for the active image
+                         />
                         
                         {/* Subtle glow for active item */}
                         {isActive && (
