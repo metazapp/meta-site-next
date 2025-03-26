@@ -168,7 +168,8 @@ export default function CareerPage() {
             href="/contact"
             variant="primary"
             size="lg"
-            className="bg-white text-primary hover:bg-gray-100"
+            className="text-primary hover:bg-gray-100"
+            
           >
             Send Your Resume
           </Button>

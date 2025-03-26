@@ -108,7 +108,7 @@ export default function ServicesPage() {
             href="/contact"
             variant="primary"
             size="lg"
-            className="bg-white text-primary hover:bg-gray-100"
+            className="text-primary hover:bg-gray-100"
           >
             Contact Us
           </Button>
