@@ -1,4 +1,4 @@
-import { Product, Service, BlogPost, JobOpening, FAQ } from "@/app/types";
+import { Product, Service, JobOpening, FAQ } from "@/app/types";
 
 // Mock Product Data
 export const products: Product [] = [
@@ -249,88 +249,7 @@ export const services: Service[] = [
   }
 ];
 
-// Mock Blog Data
-export const blogPosts: BlogPost[] = [
-  {
-    id: "b1",
-    title: "The Future of AI in Software Development",
-    excerpt: "Exploring how artificial intelligence is reshaping the landscape of software development and what to expect in the coming years.",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-    date: "2023-06-15",
-    author: {
-      name: "Alex Johnson",
-      avatar: "/images/blog/authors/alex.jpg"
-    },
-    categories: ["Technology", "Innovation"],
-    image: "/images/blog/ai-development.jpg",
-    featured: true
-  },
-  {
-    id: "b2",
-    title: "Building Scalable Cloud Infrastructure",
-    excerpt: "Learn the best practices for designing and implementing cloud infrastructure that can scale with your business needs.",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-    date: "2023-05-22",
-    author: {
-      name: "Samantha Lee",
-      avatar: "/images/blog/authors/samantha.jpg"
-    },
-    categories: ["Technology", "Development"],
-    image: "/images/blog/cloud-infrastructure.jpg"
-  },
-  {
-    id: "b3",
-    title: "Mobile App Design Trends for 2023",
-    excerpt: "Stay ahead of the curve with these cutting-edge mobile app design trends that are defining the user experience in 2023.",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-    date: "2023-04-10",
-    author: {
-      name: "David Chen",
-      avatar: "/images/blog/authors/david.jpg"
-    },
-    categories: ["Design", "Innovation"],
-    image: "/images/blog/mobile-design.jpg"
-  },
-  {
-    id: "b4",
-    title: "Cybersecurity Best Practices for Enterprises",
-    excerpt: "Essential cybersecurity measures that every enterprise should implement to protect their digital assets and customer data.",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-    date: "2023-03-18",
-    author: {
-      name: "Emily Rodriguez",
-      avatar: "/images/blog/authors/emily.jpg"
-    },
-    categories: ["Technology", "Development"],
-    image: "/images/blog/cybersecurity.jpg"
-  },
-  {
-    id: "b5",
-    title: "The Rise of Low-Code Development Platforms",
-    excerpt: "How low-code platforms are democratizing software development and accelerating digital transformation initiatives.",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-    date: "2023-02-25",
-    author: {
-      name: "Michael Brown",
-      avatar: "/images/blog/authors/michael.jpg"
-    },
-    categories: ["Development", "Innovation"],
-    image: "/images/blog/low-code.jpg"
-  },
-  {
-    id: "b6",
-    title: "Optimizing Web Performance for Better User Experience",
-    excerpt: "Strategies and techniques to improve web performance and provide a seamless user experience across all devices.",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-    date: "2023-01-30",
-    author: {
-      name: "Sophia Kim",
-      avatar: "/images/blog/authors/sophia.jpg"
-    },
-    categories: ["Development", "Design"],
-    image: "/images/blog/web-performance.jpg"
-  }
-];
+
 
 // Mock Career Data
 export const jobOpenings: JobOpening[] = [

@@ -162,7 +162,7 @@ export default async function BlogPostPage(
             <div className="max-w-3xl mx-auto">
               {/* Featured Image */}
               <div className="h-80 bg-gray-200 rounded-lg mb-10 flex items-center justify-center neumorph">
-                <span className="text-gray-500">Featured Image</span>
+
                 {/* Replace with actual image */}
                 <Image 
                   src={post.image}

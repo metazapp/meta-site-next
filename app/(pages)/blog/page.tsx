@@ -42,8 +42,9 @@ export default async function BlogPage() {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="h-80 bg-gray-200 rounded-lg flex items-center justify-center neumorph">
-                <span className="text-gray-500">Featured Image</span>
+            <div className="relative h-80 overflow-hidden">
+              <div className="h-80 bg-gray-200 rounded-lg flex items-center justify-center">
+              
                 {/* Replace with actual image */}
                 <Image 
                   src={featuredPost.image}
@@ -51,6 +52,7 @@ export default async function BlogPage() {
                   fill
                   className="object-cover rounded-lg"
                 />
+              </div>
               </div>
               
               <div>
@@ -121,7 +123,7 @@ export default async function BlogPage() {
               >
                 <div className="relative h-48 overflow-hidden">
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                    <span className="text-gray-500">Blog Image</span>
+                   
                     {/* Replace with actual image */}
                     <Image 
                       src={post.image}
