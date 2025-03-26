@@ -1,5 +1,5 @@
 // Product Types
-export type ProductCategory = "Category A" | "Category B" | "Category C";
+export type ProductCategory = "Business Management" | "Retail & Sales" | "E-commerce" | "Healthcare" | "Education" | "Artificial Intelligence" ;
 
 export type Product = {
   id: string;

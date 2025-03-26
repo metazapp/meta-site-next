@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import SectionHeading from "@/app/components/ui/SectionHeading";
 import { getBlogPosts } from "@/app/lib/blog";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Blog - Metazapp",
@@ -44,12 +45,12 @@ export default async function BlogPage() {
               <div className="h-80 bg-gray-200 rounded-lg flex items-center justify-center neumorph">
                 <span className="text-gray-500">Featured Image</span>
                 {/* Replace with actual image */}
-                {/* <Image 
+                <Image 
                   src={featuredPost.image}
                   alt={featuredPost.title}
                   fill
                   className="object-cover rounded-lg"
-                /> */}
+                />
               </div>
               
               <div>
@@ -69,13 +70,13 @@ export default async function BlogPage() {
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 rounded-full bg-gray-300 mr-3">
                     {/* Replace with actual avatar */}
-                    {/* <Image 
+                    <Image 
                       src={featuredPost.author.avatar}
                       alt={featuredPost.author.name}
                       width={40}
                       height={40}
                       className="w-full h-full rounded-full object-cover"
-                    /> */}
+                    />
                   </div>
                   <div>
                     <p className="font-medium">{featuredPost.author.name}</p>
@@ -122,12 +123,12 @@ export default async function BlogPage() {
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
                     <span className="text-gray-500">Blog Image</span>
                     {/* Replace with actual image */}
-                    {/* <Image 
+                    <Image 
                       src={post.image}
                       alt={post.title}
                       fill
                       className="object-cover"
-                    /> */}
+                    />
                   </div>
                 </div>
                 <div className="p-6">
@@ -147,13 +148,13 @@ export default async function BlogPage() {
                   <div className="flex items-center mb-4">
                     <div className="w-8 h-8 rounded-full bg-gray-300 mr-2">
                       {/* Replace with actual avatar */}
-                      {/* <Image 
+                      <Image 
                         src={post.author.avatar}
                         alt={post.author.name}
                         width={32}
                         height={32}
                         className="w-full h-full rounded-full object-cover"
-                      /> */}
+                      />
                     </div>
                     <div>
                       <p className="text-sm font-medium">{post.author.name}</p>

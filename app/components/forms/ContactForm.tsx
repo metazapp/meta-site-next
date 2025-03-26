@@ -43,17 +43,16 @@ const ContactForm = ({ jobTitle }: ContactFormProps) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus({});
-
+  
     try {
-      // Here we would send the data to the Cloudflare Worker
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://mailworker.anandncs.workers.dev", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-
+  
       if (response.ok) {
         setSubmitStatus({
           success: true,
@@ -69,8 +68,8 @@ const ContactForm = ({ jobTitle }: ContactFormProps) => {
           jobTitle,
         });
       } else {
-        const error = await response.json();
-        throw new Error(error.message || "Something went wrong");
+        const error = await response.text();
+        throw new Error(error || "Something went wrong");
       }
     } catch (error) {
       console.error("Error submitting form:", error);

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Button from "@/app/components/ui/Button";
 import { products } from "@/app/utils/mockData";
 import { FiArrowLeft } from "react-icons/fi";
+import Image from "next/image";
 
 type Props = {
   params: { id: string };
@@ -70,9 +71,15 @@ export default  function ProductPage({ params }: Props) {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Product Image */}
-            <div className="h-80 bg-gray-200 rounded-lg flex items-center justify-center neumorph">
-              <span className="text-gray-500">Product Image</span>
-            </div>
+            <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden">
+  <Image 
+    src={product.image}
+    alt={product.title}
+    fill
+    className="object-cover"
+    priority
+  />
+</div>
 
             {/* Product Info */}
             <div>

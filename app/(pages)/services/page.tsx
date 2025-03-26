@@ -6,6 +6,7 @@ import { FiCode, FiSmartphone, FiCloud, FiCpu, FiServer, FiActivity } from "reac
 import FaqAccordion from "@/app/components/sections/FaqAccordion";
 import { faqs } from "@/app/utils/mockData";
 import { JSX } from "react";
+import Image from "next/image"; 
 
 export const metadata: Metadata = {
   title: "Services - Metazapp",
@@ -73,8 +74,17 @@ export default function ServicesPage() {
               </div>
               
               <div className={`${index % 2 === 1 ? "md:order-1" : ""}`}>
-                <div className="h-80 bg-gray-200 rounded-lg flex items-center justify-center relative overflow-hidden neumorph">
-                  <span className="text-gray-500">Service Illustration</span>
+              <div className="relative h-80 w-full rounded-lg overflow-hidden neumorph">
+                  {/* Add the actual image */}
+                  <Image
+                    src={service.image || `/images/services/${service.id}.jpg`}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                  
+                  {/* Optional overlay gradient for better text visibility if needed */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none"></div>
                 </div>
               </div>
             </div>

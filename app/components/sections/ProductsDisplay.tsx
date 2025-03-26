@@ -6,13 +6,14 @@ import Button from "@/app/components/ui/Button";
 import { products } from "@/app/utils/mockData";
 import ProductModal from "@/app/components/ui/ProductModal";
 import type { Product, ProductCategory } from "@/app/types";
+import Image from "next/image";
 
 const ProductsDisplay = () => {
   const [activeCategory, setActiveCategory] = useState<ProductCategory | "All">("All");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   
-  const categories: (ProductCategory | "All")[] = ["All", "Category A", "Category B", "Category C"];
+  const categories: (ProductCategory | "All")[] = ["All", "Business Management" ,"Retail & Sales" , "E-commerce" , "Healthcare" , "Education" , "Artificial Intelligence"];
   
   const filteredProducts = activeCategory === "All" 
     ? products 
@@ -53,11 +54,14 @@ const ProductsDisplay = () => {
             key={product.id}
             className="bg-white rounded-lg overflow-hidden shadow-lg hover-lift"
           >
-            <div className="relative h-48 overflow-hidden">
-              <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-500">Product Image</span>
-              </div>
-            </div>
+           <div className="relative h-48 overflow-hidden">
+  <Image 
+    src={product.image}
+    alt={product.title}
+    fill
+    className="object-cover"
+  />
+</div>
             <div className="p-3 md:p-6">
               <span className="inline-block px-3 py-1 text-xs font-semibold text-primary bg-primary/10 rounded-full mb-3">
                 {product.category}

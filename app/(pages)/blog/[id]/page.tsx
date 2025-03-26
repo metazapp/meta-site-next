@@ -7,6 +7,7 @@ import { FiArrowLeft } from "react-icons/fi";
 import { getBlogPost, getBlogPosts } from "@/app/lib/blog";
 import fs from 'fs';
 import path from 'path';
+import Image from "next/image";
 
 interface PageProps {
   params: {
@@ -138,13 +139,13 @@ export default async function BlogPostPage(
               <div className="flex items-center">
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-3">
                   {/* Replace with actual image when available */}
-                  {/* <Image 
+                  <Image 
                     src={post.author.avatar}
                     alt={post.author.name}
                     width={40}
                     height={40}
                     className="rounded-full"
-                  /> */}
+                  />
                 </div>
                 <div>
                   <p className="text-white font-medium">{post.author.name}</p>
@@ -163,13 +164,13 @@ export default async function BlogPostPage(
               <div className="h-80 bg-gray-200 rounded-lg mb-10 flex items-center justify-center neumorph">
                 <span className="text-gray-500">Featured Image</span>
                 {/* Replace with actual image */}
-                {/* <Image 
+                <Image 
                   src={post.image}
                   alt={post.title}
                   width={800}
                   height={400}
                   className="w-full h-80 object-cover rounded-lg"
-                /> */}
+                />
               </div>
               
               {/* Blog Content */}
@@ -182,13 +183,13 @@ export default async function BlogPostPage(
                 <div className="flex items-start">
                   <div className="w-16 h-16 rounded-full bg-gray-300 mr-4 flex-shrink-0">
                     {/* Replace with actual image */}
-                    {/* <Image 
+                    <Image 
                       src={post.author.avatar}
                       alt={post.author.name}
                       width={64}
                       height={64}
                       className="rounded-full"
-                    /> */}
+                    />
                   </div>
                   <div>
                     <h3 className="text-lg font-bold mb-2">Written by {post.author.name}</h3>

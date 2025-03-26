@@ -1,164 +1,165 @@
 import { Product, Service, BlogPost, JobOpening, FAQ } from "@/app/types";
 
 // Mock Product Data
-export const products: Product[] = [
+export const products: Product [] = [
   {
     id: "p1",
-    title: "Data Analytics Platform",
-    description: "Comprehensive data analytics solution with real-time insights and customizable dashboards.",
-    category: "Category A",
+    title: "ERP Solution",
+    description: "Comprehensive enterprise resource planning software to streamline business operations and boost productivity.",
+    category: "Business Management",
     features: [
-      "Real-time data processing",
-      "Interactive visualizations",
-      "Customizable dashboards",
-      "AI-powered insights",
-      "Data integration with multiple sources"
+      "Inventory and supply chain management",
+      "Financial and accounting modules",
+      "HR and payroll management",
+      "Customer relationship management (CRM)",
+      "Customizable reporting and analytics"
     ],
     specifications: {
       "Deployment": "Cloud / On-premises",
-      "Language Support": "Python, R, SQL",
-      "Data Sources": "SQL, NoSQL, APIs, Files",
-      "Export Formats": "CSV, Excel, PDF, JSON"
+      "Languages": "JavaScript, Python",
+      "Database": "MySQL, PostgreSQL",
+      "Integrations": "Third-party APIs, Payment Gateways"
     },
     applications: [
-      "Business intelligence",
-      "Market analysis",
-      "Performance monitoring",
-      "Customer behavior analysis"
+      "Manufacturing companies",
+      "Retail and e-commerce businesses",
+      "Healthcare organizations",
+      "Education institutions"
     ],
-    image: "/images/products/analytics-platform.jpg"
+    image: "/images/products/erp-solution.jpg"
   },
   {
     id: "p2",
-    title: "Cloud Security Suite",
-    description: "Enterprise-grade security solution for cloud infrastructure and applications.",
-    category: "Category B",
+    title: "POS System",
+    description: "Feature-rich point of sale (POS) system for managing sales, inventory, and customer data in real time.",
+    category: "Retail & Sales",
     features: [
-      "Threat detection and prevention",
-      "Compliance monitoring",
-      "Vulnerability assessment",
-      "Real-time alerts",
-      "Encryption management"
+      "Real-time sales tracking",
+      "Inventory management",
+      "Multi-store support",
+      "Customer loyalty programs",
+      "Integrated payment gateways"
     ],
     specifications: {
-      "Deployment": "Cloud",
-      "Compliance": "GDPR, HIPAA, PCI DSS",
-      "Authentication": "MFA, SSO, Biometric",
-      "Monitoring": "24/7 automated"
+      "Deployment": "Cloud / On-premises",
+      "Platform": "Web & Mobile",
+      "Languages": "JavaScript, TypeScript",
+      "Payment Integration": "Stripe, Razorpay, PayPal"
     },
     applications: [
-      "Enterprise security",
-      "Financial services",
-      "Healthcare data protection",
-      "Government agencies"
+      "Retail stores",
+      "Restaurants and cafes",
+      "Supermarkets",
+      "Pharmacies"
     ],
-    image: "/images/products/security-suite.jpg"
+    image: "/images/products/pos-system.jpg"
   },
   {
     id: "p3",
-    title: "DevOps Automation Tool",
-    description: "Streamline development and operations with this comprehensive automation tool.",
-    category: "Category A",
+    title: "E-commerce Web & Mobile App",
+    description: "Full-fledged e-commerce platform with web and mobile support, offering seamless shopping experiences.",
+    category: "E-commerce",
     features: [
-      "CI/CD pipeline automation",
-      "Infrastructure as code",
-      "Monitoring and logging",
-      "Collaboration tools",
-      "Version control integration"
+      "Product catalog management",
+      "User authentication and profiles",
+      "Shopping cart and checkout",
+      "Payment gateway integration",
+      "Order tracking and notifications"
     ],
     specifications: {
-      "Deployment": "Cloud / Self-hosted",
-      "Integration": "GitHub, GitLab, Bitbucket",
-      "Languages": "All major programming languages",
-      "Scalability": "Enterprise-ready"
+      "Platforms": "Web, iOS, Android",
+      "Languages": "JavaScript, TypeScript",
+      "Database": "MongoDB, MySQL",
+      "Scalability": "Supports high traffic volumes"
     },
     applications: [
-      "Software development teams",
-      "IT operations",
-      "SaaS providers",
-      "Enterprise development"
+      "Online retail stores",
+      "Multi-vendor marketplaces",
+      "Subscription-based platforms",
+      "Service booking platforms"
     ],
-    image: "/images/products/devops-tool.jpg"
+    image: "/images/products/ecommerce-app.jpg"
   },
   {
     id: "p4",
-    title: "AI Development Framework",
-    description: "Build, train, and deploy AI models with this comprehensive development framework.",
-    category: "Category C",
+    title: "Hospital Management System",
+    description: "End-to-end healthcare management software for patient records, appointments, and billing.",
+    category: "Healthcare",
     features: [
-      "Pre-trained models",
-      "Custom model training",
-      "Model optimization",
-      "Distributed training",
-      "Deployment tools"
+      "Patient record management",
+      "Appointment scheduling",
+      "Billing and insurance handling",
+      "Doctor and staff management",
+      "Reports and analytics"
     ],
     specifications: {
-      "Deployment": "Cloud / Edge / On-premises",
-      "Frameworks": "TensorFlow, PyTorch, ONNX",
-      "Hardware Support": "CPU, GPU, TPU",
-      "Model Types": "Computer Vision, NLP, Forecasting"
+      "Deployment": "Cloud / On-premises",
+      "Languages": "Python, JavaScript",
+      "Database": "PostgreSQL, MongoDB",
+      "Security": "HIPAA compliant"
     },
     applications: [
-      "Research institutions",
-      "Product development",
-      "Process automation",
-      "Predictive analytics"
+      "Hospitals",
+      "Clinics",
+      "Diagnostic centers",
+      "Healthcare networks"
     ],
-    image: "/images/products/ai-framework.jpg"
+    image: "/images/products/healthcare-system.jpg"
   },
   {
     id: "p5",
-    title: "Mobile App Development Kit",
-    description: "Comprehensive toolkit for building cross-platform mobile applications.",
-    category: "Category B",
+    title: "School Management System",
+    description: "Comprehensive software for managing educational institutions, students, and staff.",
+    category: "Education",
     features: [
-      "Cross-platform compatibility",
-      "UI component library",
-      "Performance optimization",
-      "Backend integration",
-      "Analytics tools"
+      "Student enrollment and records",
+      "Course and schedule management",
+      "Online exams and grading",
+      "Fee collection and finance management",
+      "Parent-teacher communication portal"
     ],
     specifications: {
-      "Platforms": "iOS, Android",
-      "Languages": "JavaScript, TypeScript",
-      "Architecture": "Component-based",
-      "Testing": "Automated unit and UI testing"
+      "Deployment": "Cloud / On-premises",
+      "Languages": "JavaScript, Python",
+      "Database": "PostgreSQL, MySQL",
+      "Integration": "LMS, payment gateways"
     },
     applications: [
-      "App startups",
-      "Enterprise mobile solutions",
-      "E-commerce platforms",
-      "Social media applications"
+      "Schools and colleges",
+      "Training institutes",
+      "E-learning platforms",
+      "Coaching centers"
     ],
-    image: "/images/products/mobile-dev-kit.jpg"
+    image: "/images/products/education-system.jpg"
   },
   {
     id: "p6",
-    title: "Blockchain Development Platform",
-    description: "Build, test, and deploy blockchain applications with this comprehensive platform.",
-    category: "Category C",
+    title: "AI & ML Solutions",
+    description: "AI and machine learning products for automation, data insights, and predictive analytics.",
+    category: "Artificial Intelligence",
     features: [
-      "Smart contract development",
-      "Decentralized app toolkit",
-      "Testing framework",
-      "Security analysis",
-      "Network monitoring"
+      "Custom AI model development",
+      "Predictive analytics",
+      "Natural language processing (NLP)",
+      "Computer vision applications",
+      "Real-time data insights"
     ],
     specifications: {
-      "Blockchains": "Ethereum, Polygon, Solana",
-      "Languages": "Solidity, Rust",
-      "Integration": "Web3, Wallets, Oracles",
-      "Scaling": "Layer 2 solutions"
+      "Deployment": "Cloud / On-premises",
+      "Frameworks": "TensorFlow, PyTorch",
+      "Languages": "Python, R",
+      "Hardware Support": "CPU, GPU, TPU"
     },
     applications: [
-      "Fintech solutions",
-      "Supply chain tracking",
-      "NFT platforms",
-      "Decentralized finance"
+      "Data analysis and insights",
+      "Business process automation",
+      "Healthcare diagnostics",
+      "Customer behavior prediction"
     ],
-    image: "/images/products/blockchain-platform.jpg"
+    image: "/images/products/ai-ml-solutions.jpg"
   }
 ];
+
 
 // Mock Service Data
 export const services: Service[] = [

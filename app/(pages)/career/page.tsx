@@ -5,6 +5,7 @@ import Button from "@/app/components/ui/Button";
 import { jobOpenings } from "@/app/utils/mockData";
 import { FiCode, FiSmartphone, FiServer, FiPieChart } from "react-icons/fi";
 import { JSX } from "react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Careers - Metazapp",
@@ -94,9 +95,16 @@ export default function CareerPage() {
               </div>
             </div>
             
-            <div className="h-96 bg-gray-200 rounded-lg flex items-center justify-center neumorph">
-              <span className="text-gray-500">Team Image</span>
-            </div>
+            <div className="relative h-96 rounded-lg overflow-hidden neumorph">
+                <Image 
+                  src="/images/team/team-culture.jpg" // Path to your team image
+                  alt="Metazapp team collaboration"
+                  fill
+                  className="object-cover"
+                />
+                {/* Optional overlay gradient for better text contrast */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              </div>
           </div>
         </div>
       </section>

@@ -9,6 +9,7 @@ import Button from "../ui/Button";
 import { products } from "@/app/utils/mockData";
 import ProductModal from "../ui/ProductModal";
 import type { ProductCategory, Product } from "@/app/types";
+import Image from "next/image";
 
 const ProductsShowcase = () => {
   const [activeCategory] = useState<ProductCategory | "All">("All");
@@ -53,11 +54,14 @@ const ProductsShowcase = () => {
         transition={{ duration: 0.3 }}
         className="bg-white rounded-lg overflow-hidden shadow-lg hover-lift"
       >
-        <div className="relative h-28 md:h-32 lg:h-40 overflow-hidden">
-          <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-            <span className="text-gray-500 text-xs md:text-sm">Product Image</span>
-          </div>
-        </div>
+       <div className="relative h-32 md:h-40 lg:h-48 overflow-hidden">
+  <Image 
+    src={product.image}
+    alt={product.title}
+    fill
+    className="object-cover"
+  />
+</div>
         <div className="p-2 md:p-4">
           <span className="inline-block px-2 py-0.5 text-xs font-semibold text-primary bg-primary/10 rounded-full mb-2">
             {product.category}
