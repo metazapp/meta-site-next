@@ -11,11 +11,11 @@ import ProductModal from "../ui/ProductModal";
 import type { ProductCategory, Product } from "@/app/types";
 
 const ProductsShowcase = () => {
-  const [activeCategory, setActiveCategory] = useState<ProductCategory | "All">("All");
+  const [activeCategory] = useState<ProductCategory | "All">("All");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   
-  const categories: (ProductCategory | "All")[] = ["All", "Category A", "Category B", "Category C"];
+
   
   const filteredProducts = activeCategory === "All" 
   ? products.slice(0, 4) 
@@ -41,22 +41,7 @@ const ProductsShowcase = () => {
           />
         </ScrollReveal>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-10">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 rounded-md transition-all duration-300 ${
-                activeCategory === category
-                  ? "bg-primary text-white shadow-md"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
+      
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6 mt-8">
           <AnimatePresence>
             {filteredProducts.map((product) => (
