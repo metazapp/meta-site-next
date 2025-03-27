@@ -23,7 +23,7 @@ const Footer = () => {
         <div>
   <div className="mb-4">
     <Image 
-      src="/Metazapp-Logo.png" 
+      src="/Metazapp-Logo-White.png" 
       alt="Metazapp Logo" 
       width={150}
       height={40}
