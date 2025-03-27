@@ -273,7 +273,8 @@ export const jobOpenings: JobOpening[] = [
     ],
     location: "Coimbatore, India",
     type: "Full-time",
-    icon: "CodeIcon"
+    icon: "CodeIcon",
+    status: "open" // Add status field: 'open' or 'filled'
   },
   {
     id: "j2",
@@ -295,7 +296,8 @@ export const jobOpenings: JobOpening[] = [
     ],
     location: "Remote",
     type: "Full-time",
-    icon: "PaletteIcon"
+    icon: "PaletteIcon",
+    status: "filled" // This position is filled
   },
   {
     id: "j3",
@@ -317,7 +319,8 @@ export const jobOpenings: JobOpening[] = [
     ],
     location: "Coimbatore, India",
     type: "Full-time",
-    icon: "ServerIcon"
+    icon: "ServerIcon",
+    status: "open" // Add status field
   },
   {
     id: "j4",
@@ -339,7 +342,8 @@ export const jobOpenings: JobOpening[] = [
     ],
     location: "Coimbatore, India",
     type: "Full-time",
-    icon: "ChartIcon"
+    icon: "ChartIcon",
+    status: "open" // Add status field
   }
 ];
 

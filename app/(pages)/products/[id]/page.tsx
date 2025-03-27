@@ -6,20 +6,31 @@ import { products } from "@/app/utils/mockData";
 import { FiArrowLeft } from "react-icons/fi";
 import Image from "next/image";
 
-type Props = {
-  params: { id: string };
+// Define the proper types for Next.js App Router
+type PageParams = {
+  id: string;
+};
+
+type PageProps = {
+  params: PageParams;
+  searchParams?: { [key: string]: string | string[] | undefined };
 };
 
 // Generate static paths for all products
-export function generateStaticParams() {
-  return products.map((product) => ({
+export function generateStaticParams(): Promise<PageParams[]> {
+  return Promise.resolve(products.map((product) => ({
     id: product.id,
-  }));
+  })));
 }
 
 // Generate metadata for each product
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  // Convert params to a plain object to avoid the async issue
+export async function generateMetadata(
+  props: PageProps
+): Promise<Metadata> {
+  // Await params before accessing its properties
+  const params = await props.params;
+  
+  // Use the ID to find the product
   const id = String(params.id);
   const product = products.find(p => p.id === id);
   
@@ -35,8 +46,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default  function ProductPage({ params }: Props) {
-  // Convert params to a plain object to avoid the async issue
+export default async function ProductPage(props: PageProps) {
+  // Await params before accessing its properties
+  const params = await props.params;
+  
+  // Use the ID to find the product
   const id = String(params.id);
   const product = products.find(p => p.id === id);
   
@@ -72,14 +86,14 @@ export default  function ProductPage({ params }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Product Image */}
             <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden">
-  <Image 
-    src={product.image}
-    alt={product.title}
-    fill
-    className="object-cover"
-    priority
-  />
-</div>
+              <Image 
+                src={product.image}
+                alt={product.title}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
 
             {/* Product Info */}
             <div>

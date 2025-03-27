@@ -14,7 +14,7 @@ const ensureBlogsDirectory = () => {
   if (!fs.existsSync(blogsDirectory)) {
     try {
       fs.mkdirSync(blogsDirectory, { recursive: true });
-      console.log(`Created blogs directory at: ${blogsDirectory}`);
+      //console.log(`Created blogs directory at: ${blogsDirectory}`);
     } catch (error) {
       console.error(`Failed to create blogs directory: ${error}`);
     }
@@ -43,7 +43,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
           try {
             // Remove ".md" from file name to get id
             const id = fileName.replace(/\.md$/, '');
-            console.log(`Processing blog post: ${id}`);
+            //console.log(`Processing blog post: ${id}`);
 
             // Read markdown file as string
             const fullPath = path.join(blogsDirectory, fileName);
@@ -102,7 +102,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
 
     // Filter out any undefined results
     const validPosts = allPostsData.filter(Boolean);
-    console.log(`Successfully processed ${validPosts.length} blog posts`);
+    //console.log(`Successfully processed ${validPosts.length} blog posts`);
 
     // Sort posts by date
     return validPosts.sort((a, b) => {
@@ -123,7 +123,7 @@ export async function getBlogPost(id: string): Promise<BlogPost | null> {
     // Ensure directory exists
     ensureBlogsDirectory();
     
-    console.log(`Trying to load blog post with ID: ${id}`);
+    //console.log(`Trying to load blog post with ID: ${id}`);
     
     // Clean the ID - remove any .md extension
     const cleanId = id.replace(/\.md$/, '');
@@ -134,13 +134,13 @@ export async function getBlogPost(id: string): Promise<BlogPost | null> {
       path.join(blogsDirectory, `${cleanId}`), // Just in case the full path was passed
     ];
     
-    console.log(`Checking paths: ${possiblePaths.join(', ')}`);
+    //console.log(`Checking paths: ${possiblePaths.join(', ')}`);
     
     let fullPath = '';
     for (const p of possiblePaths) {
       if (fs.existsSync(p)) {
         fullPath = p;
-        console.log(`Found blog post at: ${fullPath}`);
+        //console.log(`Found blog post at: ${fullPath}`);
         break;
       }
     }
@@ -259,7 +259,7 @@ Write your blog post content in Markdown format.
 
     try {
       fs.writeFileSync(samplePath, sampleContent);
-      console.log('Created sample blog post');
+      //console.log('Created sample blog post');
     } catch (error) {
       console.error('Error creating sample blog post:', error);
     }

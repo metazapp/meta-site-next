@@ -138,6 +138,15 @@ export default function CareerPage() {
                         <span className="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
                           {job.type}
                         </span>
+                        {/* Add status badge */}
+                        <span className={`${
+                          job.status === 'open' 
+                            ? 'bg-green-100 text-green-800' 
+                            : 'bg-red-100 text-red-800'
+                          } px-3 py-1 rounded-full text-sm font-medium`}
+                        >
+                          {job.status === 'open' ? 'Open' : 'Filled'}
+                        </span>
                       </div>
                       <p className="text-gray-600 mb-4">{job.description}</p>
                       
@@ -150,12 +159,19 @@ export default function CareerPage() {
                         </ul>
                       </div>
                       
-                      <Link
-                        href={`/contact?job=${job.title}`}
-                        className="inline-flex items-center px-4 py-2 rounded-md bg-primary text-white hover:bg-primary-dark transition-colors duration-300"
-                      >
-                        Apply Now
-                      </Link>
+                      {/* Conditionally render Apply Now button or Position Filled label */}
+                      {job.status === 'open' ? (
+                        <Link
+                          href={`/contact?job=${job.title}`}
+                          className="inline-flex items-center px-4 py-2 rounded-md bg-primary text-white hover:bg-primary-dark transition-colors duration-300"
+                        >
+                          Apply Now
+                        </Link>
+                      ) : (
+                        <div className="inline-flex items-center px-4 py-2 rounded-md bg-gray-200 text-gray-600 cursor-not-allowed">
+                          Position Filled
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -177,7 +193,6 @@ export default function CareerPage() {
             variant="primary"
             size="lg"
             className="text-primary hover:bg-gray-100"
-            
           >
             Send Your Resume
           </Button>

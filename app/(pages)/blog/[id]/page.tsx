@@ -9,14 +9,18 @@ import fs from 'fs';
 import path from 'path';
 import Image from "next/image";
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
+// Define appropriate types matching Next.js App Router expectations
+type PageParams = {
+  id: string;
+};
+
+type PageProps = {
+  params: PageParams;
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
 
 // Generate static paths for all blog posts
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<PageParams[]> {
   try {
     // Method 1: Use the getBlogPosts function
     const posts = await getBlogPosts();
@@ -50,9 +54,12 @@ export async function generateStaticParams() {
 
 // Generate metadata for each blog post
 export async function generateMetadata(
-  { params }: PageProps
+  props: PageProps
 ): Promise<Metadata> {
   try {
+    // Important: Await the params object before accessing its properties
+    const params = await props.params;
+    
     // Make sure to clean the ID first
     const cleanId = params.id.replace(/\.md$/, '');
     const post = await getBlogPost(cleanId);
@@ -91,9 +98,12 @@ export async function generateMetadata(
 }
 
 export default async function BlogPostPage(
-  { params }: PageProps
+  props: PageProps
 ) {
   try {
+    // Important: Await the params object before accessing its properties
+    const params = await props.params;
+    
     // Remove .md extension if present in the URL
     const cleanId = params.id.replace(/\.md$/, '');
     const post = await getBlogPost(cleanId);
@@ -138,7 +148,6 @@ export default async function BlogPostPage(
               
               <div className="flex items-center">
                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-3">
-                  {/* Replace with actual image when available */}
                   <Image 
                     src={post.author.avatar}
                     alt={post.author.name}
@@ -162,8 +171,6 @@ export default async function BlogPostPage(
             <div className="max-w-3xl mx-auto">
               {/* Featured Image */}
               <div className="h-80 bg-gray-200 rounded-lg mb-10 flex items-center justify-center neumorph">
-
-                {/* Replace with actual image */}
                 <Image 
                   src={post.image}
                   alt={post.title}
@@ -182,7 +189,6 @@ export default async function BlogPostPage(
               <div className="mt-16 bg-gray-50 p-6 rounded-lg neumorph">
                 <div className="flex items-start">
                   <div className="w-16 h-16 rounded-full bg-gray-300 mr-4 flex-shrink-0">
-                    {/* Replace with actual image */}
                     <Image 
                       src={post.author.avatar}
                       alt={post.author.name}

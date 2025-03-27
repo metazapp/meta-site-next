@@ -34,6 +34,7 @@ export type JobOpening = {
   location: string;
   type: "Full-time" | "Part-time" | "Contract" | "Remote";
   icon: string;
+  status: 'open' | 'filled';
 };
 
 // FAQ Types
