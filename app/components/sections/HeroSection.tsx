@@ -48,7 +48,7 @@ const HeroSection = () => {
     // Set up interval for keyword rotation
     intervalRef.current = setInterval(() => {
       setActiveIndex(prev => (prev + 1) % keywords.length);
-    }, 5000);
+    }, 2500);
 
     // Clean up interval on unmount
     return () => {
