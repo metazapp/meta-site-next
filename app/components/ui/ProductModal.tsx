@@ -50,12 +50,12 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="bg-white rounded-xl w-full max-w-3xl max-h-[90vh] overflow-hidden shadow-2xl"
+            className="bg-white rounded-xl w-full max-w-3xl max-h-[90vh] overflow-hidden shadow-2xl flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header with close button */}
             <div className="flex items-center justify-between p-4 border-b">
-              <h3 className="text-2xl font-bold">{product.title}</h3>
+              <h3 className="text-xl md:text-2xl font-bold truncate">{product.title}</h3>
               <button
                 onClick={onClose}
                 className="p-2 rounded-full hover:bg-gray-100 transition-colors"
@@ -65,11 +65,10 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
               </button>
             </div>
 
-            <div className="overflow-y-auto max-h-[calc(90vh-130px)]">
-            
-
+            {/* Scrollable content area */}
+            <div className="overflow-y-auto flex-grow" style={{ maxHeight: 'calc(100vh - 200px)' }}>
               {/* Product Content */}
-              <div className="p-6">
+              <div className="p-4 md:p-6">
                 <div className="mb-4">
                   <span className="inline-block px-3 py-1 text-sm font-semibold text-primary bg-primary/10 rounded-full">
                     {product.category}
@@ -92,7 +91,7 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
 
                 <div className="mb-6">
                   <h4 className="text-lg font-semibold mb-3">Specifications</h4>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {Object.entries(product.specifications).map(([key, value], index) => (
                       <div key={index}>
                         <span className="font-medium">{key}:</span> {value}
@@ -115,12 +114,20 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
               </div>
             </div>
 
-            {/* Footer with action buttons */}
-            <div className="p-4 border-t bg-gray-50 flex justify-end space-x-3">
-              <Button onClick={onClose} variant="outline">
+            {/* Footer with action buttons - now sticky at bottom */}
+            <div className="p-4 border-t bg-gray-50 flex flex-col sm:flex-row justify-end gap-3 sticky bottom-0 left-0 right-0">
+              <Button 
+                onClick={onClose} 
+                variant="outline"
+                className="w-full sm:w-auto"
+              >
                 Close
               </Button>
-              <Button variant="primary" href="/contact">
+              <Button 
+                variant="primary" 
+                href="/contact"
+                className="w-full sm:w-auto"
+              >
                 Request Demo
               </Button>
             </div>

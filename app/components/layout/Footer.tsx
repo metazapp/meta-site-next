@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { FiMail, FiPhone, FiMapPin, FiInstagram, FiTwitter, FiFacebook, FiLinkedin } from "react-icons/fi";
 
 const Footer = () => {
@@ -19,50 +20,58 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4 gradient-text">Metazapp</h3>
-            <p className="text-gray-400 mb-4">
-              Innovative software solutions for GenZ, students, and professionals.
-            </p>
-            <div className="flex space-x-4">
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-                aria-label="Facebook"
-              >
-                <FiFacebook size={20} />
-              </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-                aria-label="Twitter"
-              >
-                <FiTwitter size={20} />
-              </a>
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-                aria-label="Instagram"
-              >
-                <FiInstagram size={20} />
-              </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
-                aria-label="LinkedIn"
-              >
-                <FiLinkedin size={20} />
-              </a>
-            </div>
-          </div>
+        <div>
+  <div className="mb-4">
+    <Image 
+      src="/Metazapp-Logo.png" 
+      alt="Metazapp Logo" 
+      width={150}
+      height={40}
+      className="object-contain"
+    />
+  </div>
+  <p className="text-gray-400 mb-4">
+    Empowering Innovation with Smart & Scalable Software Solutions.
+  </p>
+  <div className="flex space-x-4">
+    <a 
+      href="https://facebook.com" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="text-gray-400 hover:text-white transition-colors duration-300"
+      aria-label="Facebook"
+    >
+      <FiFacebook size={20} />
+    </a>
+    <a 
+      href="https://twitter.com" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="text-gray-400 hover:text-white transition-colors duration-300"
+      aria-label="Twitter"
+    >
+      <FiTwitter size={20} />
+    </a>
+    <a 
+      href="https://instagram.com" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="text-gray-400 hover:text-white transition-colors duration-300"
+      aria-label="Instagram"
+    >
+      <FiInstagram size={20} />
+    </a>
+    <a 
+      href="https://linkedin.com" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="text-gray-400 hover:text-white transition-colors duration-300"
+      aria-label="LinkedIn"
+    >
+      <FiLinkedin size={20} />
+    </a>
+  </div>
+</div>
           
           <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
@@ -113,12 +122,14 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Contact</h3>
             <ul className="space-y-3">
-              <li className="flex items-start">
-                <FiMapPin className="text-primary mr-3 mt-1" size={18} />
-                <span className="text-gray-400">
-                  No.17 First Floor, Coimbatore - 641047
-                </span>
-              </li>
+            <li className="flex items-start">
+             <FiMapPin className="text-primary mr-3 mt-1" size={18} />
+             <div className="text-gray-400">
+               <span className="block">17, First Floor,</span>
+               <span className="block">Mettupalayam Road,</span>
+               <span className="block">Coimbatore - 641047</span>
+             </div>
+             </li>
               <li className="flex items-center">
                 <FiPhone className="text-primary mr-3" size={18} />
                 <a 

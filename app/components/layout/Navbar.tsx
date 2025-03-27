@@ -30,23 +30,23 @@ const Navbar = () => {
 
   return (
     <header
-    className={`fixed top-0 w-full z-[100] transition-all duration-300 ${
-      isScrolled
-        ? "bg-black/10 backdrop-blur-sm py-2"
-        : "bg-white shadow-md py-2"
-    }`}
-  >
+      className={`fixed top-0 w-full z-[100] transition-all duration-300 ${
+        isScrolled
+          ? "bg-black/10 backdrop-blur-sm py-2"
+          : "bg-white shadow-md py-2"
+      }`}
+    >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="relative z-10">
-        <div className="flex items-center">
-        <Image 
-      src="/Metazapp-Logo.png" 
-      alt="Metazapp Logo" 
-      width={150}
-      height={40}
-      priority
-      className="object-contain"
-    />
+          <div className="flex items-center">
+            <Image 
+              src="/Metazapp-Logo.png" 
+              alt="Metazapp Logo" 
+              width={150}
+              height={40}
+              priority
+              className="object-contain"
+            />
           </div>
         </Link>
 
@@ -81,7 +81,7 @@ const Navbar = () => {
           </Link>
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Fixed the color for visibility */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="md:hidden relative z-10 focus:outline-none"
@@ -92,33 +92,27 @@ const Navbar = () => {
               className={`block h-0.5 rounded transition-all duration-300 ${
                 isMobileMenuOpen
                   ? "w-6 -rotate-45 translate-y-1 bg-gray-800"
-                  : isScrolled
-                  ? "w-6 bg-gray-800"
-                  : "w-6 bg-white"
+                  : "w-6 bg-gray-800" // Always gray-800 for visibility
               }`}
             ></span>
             <span
               className={`block h-0.5 rounded transition-all duration-300 ${
                 isMobileMenuOpen
                   ? "w-6 opacity-0"
-                  : isScrolled
-                  ? "w-4 bg-gray-800"
-                  : "w-4 bg-white"
+                  : "w-4 bg-gray-800" // Always gray-800 for visibility
               }`}
             ></span>
             <span
               className={`block h-0.5 rounded transition-all duration-300 ${
                 isMobileMenuOpen
                   ? "w-6 rotate-45 -translate-y-1 bg-gray-800"
-                  : isScrolled
-                  ? "w-5 bg-gray-800"
-                  : "w-5 bg-white"
+                  : "w-5 bg-gray-800" // Always gray-800 for visibility
               }`}
             ></span>
           </div>
         </button>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Now always visible when open */}
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}

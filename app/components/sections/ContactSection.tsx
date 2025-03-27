@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
+import { FiMail, FiPhone } from "react-icons/fi";
 import ScrollReveal from "../animations/ScrollReveal";
 import SectionHeading from "../ui/SectionHeading";
 import ContactForm from "../forms/ContactForm";
@@ -22,13 +22,6 @@ const ContactSection = () => {
       details: [
         { label: "Support", value: "+91 90034 14321" }
       ]
-    },
-    {
-      icon: <FiMapPin size={24} className="text-primary" />,
-      title: "Visit Us",
-      details: [
-        { label: "Headquarters", value: "No.17 First Floor, Coimbatore - 641047" }
-      ]
     }
   ];
 
@@ -43,7 +36,7 @@ const ContactSection = () => {
           />
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-12">
+        <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 md:gap-8 mt-12">
           {contactInfo.map((item, index) => (
             <ScrollReveal key={index} delay={index * 0.5}>
               <div className="bg-white p-3 md:p-6 rounded-lg shadow-md text-center h-full flex flex-col">

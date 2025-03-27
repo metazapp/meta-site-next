@@ -109,7 +109,7 @@ export default function CareerPage() {
         </div>
       </section>
 
-      {/* Current Openings */}
+      {/* Current Openings - Mobile view shows 1 column, desktop stays at 2 columns */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <SectionHeading
@@ -118,7 +118,8 @@ export default function CareerPage() {
             centered
           />
           
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8 mt-12">
+          {/* Grid is now 1 column on mobile, 2 columns on desktop (unchanged) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-12">
             {jobOpenings.map((job) => (
               <div 
                 key={job.id}
@@ -153,8 +154,18 @@ export default function CareerPage() {
                       <div className="mb-6">
                         <h4 className="text-lg font-semibold mb-2">Requirements:</h4>
                         <ul className="list-disc list-inside space-y-1 text-gray-600">
-                          {job.requirements.slice(0, 3).map((req, i) => (
+                          {job.requirements.map((req, i) => (
                             <li key={i}>{req}</li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Show responsibilities (only in mobile view) */}
+                      <div className="mb-6 block md:hidden">
+                        <h4 className="text-lg font-semibold mb-2">Responsibilities:</h4>
+                        <ul className="list-disc list-inside space-y-1 text-gray-600">
+                          {job.responsibilities.map((resp, i) => (
+                            <li key={i}>{resp}</li>
                           ))}
                         </ul>
                       </div>

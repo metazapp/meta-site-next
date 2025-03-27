@@ -52,37 +52,39 @@ const ProductsDisplay = () => {
         {filteredProducts.map((product) => (
           <div
             key={product.id}
-            className="bg-white rounded-lg overflow-hidden shadow-lg hover-lift"
+            className="bg-white rounded-lg overflow-hidden shadow-lg hover-lift flex flex-col h-full"
           >
-           <div className="relative h-48 overflow-hidden">
-  <Image 
-    src={product.image}
-    alt={product.title}
-    fill
-    className="object-cover"
-  />
-</div>
-            <div className="p-3 md:p-6">
+            <div className="relative h-48 overflow-hidden">
+              <Image 
+                src={product.image}
+                alt={product.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-3 md:p-6 flex flex-col flex-grow">
               <span className="inline-block px-3 py-1 text-xs font-semibold text-primary bg-primary/10 rounded-full mb-3">
                 {product.category}
               </span>
               <h3 className="text-xl font-bold mb-2">{product.title}</h3>
-              <p className="text-gray-600 mb-4">{product.description}</p>
-              <div className="flex flex-col sm:flex-row gap-2">
-              <Button 
-                onClick={() => handleOpenModal(product)} 
-                variant="primary" 
-                className="w-full text-[10px] md:text-xs lg:text-sm py-1 px-1 md:px-2"
-              >
-                View
-              </Button>
-                <Link href={`/products/${product.id}`} className="block w-full">
+              <div className="mb-4 flex-grow overflow-hidden relative">
+                <p className="text-gray-600 line-clamp-3">{product.description}</p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2 mt-auto pt-2">
                 <Button 
+                  onClick={() => handleOpenModal(product)} 
                   variant="primary" 
                   className="w-full text-[10px] md:text-xs lg:text-sm py-1 px-1 md:px-2"
                 >
-                  Details
+                  View
                 </Button>
+                <Link href={`/products/${product.id}`} className="block w-full">
+                  <Button 
+                    variant="primary" 
+                    className="w-full text-[10px] md:text-xs lg:text-sm py-1 px-1 md:px-2"
+                  >
+                    Details
+                  </Button>
                 </Link>
               </div>
             </div>

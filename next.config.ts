@@ -4,7 +4,7 @@ const nextConfig = {
   // Use trailingSlash for better compatibility with static exports
   trailingSlash: true,
   // Disable image optimization for static exports
-  images: { unoptimized: true },
+  images: { unoptimized: true }, 
   // Disable strict mode for development to reduce the number of re-renders
   reactStrictMode: false,
   // Skip middleware URL normalization (moved from experimental)

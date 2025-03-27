@@ -42,17 +42,16 @@ export default async function BlogPage() {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-80 overflow-hidden">
-              <div className="h-80 bg-gray-200 rounded-lg flex items-center justify-center">
-              
-                {/* Replace with actual image */}
-                <Image 
-                  src={featuredPost.image}
-                  alt={featuredPost.title}
-                  fill
-                  className="object-cover rounded-lg"
-                />
-              </div>
+              <div className="relative h-80 overflow-hidden">
+                <div className="h-80 bg-gray-200 rounded-lg flex items-center justify-center">
+                  {/* Replace with actual image */}
+                  <Image 
+                    src={featuredPost.image}
+                    alt={featuredPost.title}
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
               </div>
               
               <div>
@@ -115,41 +114,37 @@ export default async function BlogPage() {
             centered
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-8">
+          {/* Updated grid layout - 2 cards per row on mobile, 3 on larger screens */}
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 lg:gap-8 mt-8">
             {regularPosts.map((post) => (
               <div
                 key={post.id}
-                className="bg-white rounded-lg overflow-hidden shadow-lg hover-lift"
+                className="bg-white rounded-lg overflow-hidden shadow-lg hover-lift flex flex-col h-full"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                   
-                    {/* Replace with actual image */}
-                    <Image 
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+                <div className="relative h-40 md:h-48 overflow-hidden">
+                  <Image 
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <div className="p-6">
-                  <div className="flex flex-wrap gap-2 mb-3">
+                <div className="p-3 md:p-6 flex flex-col flex-grow">
+                  <div className="flex flex-wrap gap-1 md:gap-2 mb-2 md:mb-3">
                     {post.categories.slice(0, 2).map((category) => (
                       <span
                         key={category}
-                        className="bg-primary/10 text-primary px-2 py-0.5 rounded-full text-xs font-medium"
+                        className="bg-primary/10 text-primary px-2 py-0.5 rounded-full text-xs font-medium truncate"
                       >
                         {category}
                       </span>
                     ))}
                   </div>
                   
-                  <h3 className="text-xl font-bold mb-3">{post.title}</h3>
+                  <h3 className="text-sm md:text-lg lg:text-xl font-bold mb-2 md:mb-3 line-clamp-2">{post.title}</h3>
                   
-                  <div className="flex items-center mb-4">
-                    <div className="w-8 h-8 rounded-full bg-gray-300 mr-2">
-                      {/* Replace with actual avatar */}
+                  <div className="flex items-center mb-2 md:mb-4">
+                    <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gray-300 mr-2 flex-shrink-0">
                       <Image 
                         src={post.author.avatar}
                         alt={post.author.name}
@@ -158,9 +153,9 @@ export default async function BlogPage() {
                         className="w-full h-full rounded-full object-cover"
                       />
                     </div>
-                    <div>
-                      <p className="text-sm font-medium">{post.author.name}</p>
-                      <p className="text-xs text-gray-500">
+                    <div className="min-w-0">
+                      <p className="text-xs md:text-sm font-medium truncate">{post.author.name}</p>
+                      <p className="text-xs text-gray-500 truncate">
                         {new Date(post.date).toLocaleDateString('en-US', {
                           year: 'numeric',
                           month: 'long',
@@ -170,13 +165,15 @@ export default async function BlogPage() {
                     </div>
                   </div>
                   
-                  <p className="text-sm text-gray-600 mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
+                  <div className="flex-grow mb-3">
+                    <p className="text-xs md:text-sm text-gray-600 line-clamp-2 md:line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                  </div>
                   
                   <Link
                     href={`/blog/${post.id.replace(/\.md$/, '')}`}
-                    className="text-primary font-medium hover:underline"
+                    className="text-primary text-xs md:text-sm font-medium hover:underline mt-auto"
                   >
                     Read More
                   </Link>

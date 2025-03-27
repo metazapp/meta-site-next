@@ -1,4 +1,3 @@
-
 import { Metadata } from "next";
 import SectionHeading from "@/app/components/ui/SectionHeading";
 import Button from "@/app/components/ui/Button";

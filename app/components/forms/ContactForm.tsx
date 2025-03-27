@@ -85,7 +85,7 @@ const ContactForm = ({ jobTitle }: ContactFormProps) => {
 
   return (
     <form onSubmit={handleSubmit} className="neumorph p-6 md:p-8">
-      {submitStatus.message && (
+{/*       {submitStatus.message && (
         <div
           className={`mb-6 p-4 rounded-md ${
             submitStatus.success
@@ -95,7 +95,7 @@ const ContactForm = ({ jobTitle }: ContactFormProps) => {
         >
           {submitStatus.message}
         </div>
-      )}
+      )} */}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
@@ -203,6 +203,17 @@ const ContactForm = ({ jobTitle }: ContactFormProps) => {
             : "Send Message"}
         </Button>
       </div>
+      {submitStatus.message && (
+        <div
+          className={`mb-6 p-4 rounded-md ${
+            submitStatus.success
+              ? "bg-green-100 text-green-700 border border-green-200"
+              : "bg-red-100 text-red-700 border border-red-200"
+          }`}
+        >
+          {submitStatus.message}
+        </div>
+      )}
     </form>
   );
 };
