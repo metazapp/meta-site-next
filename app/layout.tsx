@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "Metazapp",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "https://metazapp.com/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Metazapp",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Metazapp - Innovative Software Solutions",
     description: "Metazapp provides innovative, reliable and secure software solutions for businesses and individuals.",
-    images: ["/images/twitter-image.jpg"],
+    images: ["https://metazapp.com/images/twitter-image.jpg"],
   },
   robots: {
     index: true,
